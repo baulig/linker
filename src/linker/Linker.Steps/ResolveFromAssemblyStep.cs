@@ -81,7 +81,9 @@ namespace Mono.Linker.Steps
 
 		protected virtual void ProcessLibrary (AssemblyDefinition assembly)
 		{
+#if MARTIN_FIXME
 			ProcessLibrary (Context, assembly, _rootVisibility);
+#endif
 		}
 
 		public static void ProcessLibrary (LinkContext context, AssemblyDefinition assembly, RootVisibility rootVisibility = RootVisibility.Any)
@@ -91,8 +93,10 @@ namespace Mono.Linker.Steps
 
 			context.Tracer.Push (assembly);
 
+#if MARTIN_FIXME
 			foreach (TypeDefinition type in assembly.MainModule.Types)
 				MarkType (context, type, rootVisibility);
+#endif
 
 			if (assembly.MainModule.HasExportedTypes) {
 				foreach (var exported in assembly.MainModule.ExportedTypes) {
