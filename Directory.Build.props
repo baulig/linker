@@ -1,6 +1,7 @@
 <Project>
-  <Import Project="Sdk.props" Sdk="Microsoft.DotNet.Arcade.Sdk" Condition=" '$(ArcadeBuild)' == 'true' " />
+  <Import Project="Sdk.props" Sdk="Microsoft.DotNet.Arcade.Sdk" />
   <PropertyGroup>
+    <ArcadeBuild>true</ArcadeBuild>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 </Project>
