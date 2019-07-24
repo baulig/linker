@@ -1,8 +1,8 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <Import Project="$(MSBuildThisFileDirectory)../../eng/Versions.props" />
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp2.0;net472</TargetFrameworks>
-    <TargetFrameworks Condition=" '$(OS)' != 'Windows_NT' ">netcoreapp2.0</TargetFrameworks>
+    <TargetFrameworks>netcoreapp3.0;net472</TargetFrameworks>
+    <TargetFrameworks Condition=" '$(OS)' != 'Windows_NT' ">netcoreapp3.0</TargetFrameworks>
     <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <BaseOutputPath>bin/</BaseOutputPath>
     <PackageOutputPath>$(BaseOutputPath)nupkgs</PackageOutputPath>
@@ -80,7 +80,7 @@
   <ItemGroup>
     <ProjectReference Include="../linker/Mono.Linker.csproj"
                       PrivateAssets="All"
-                      Condition=" '$(TargetFramework)' == 'netcoreapp2.0' " />
+                      Condition=" '$(TargetFramework)' == 'netcoreapp3.0' " />
     <ProjectReference Include="../../external/cecil/Mono.Cecil.csproj"
                       PrivateAssets="All" />
   </ItemGroup>
